@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="180" viewBox="0 0 720 180" shape-rendering="crispEdges" role="img" aria-labelledby="title desc">
+  <title id="title">GranaXP</title>
+  <desc id="desc">Logotipo pixel art vermelho e creme do GranaXP.</desc>
+  <rect width="720" height="180" fill="#090909"/>
+  <rect x="10" y="10" width="700" height="160" fill="none" stroke="#520808" stroke-width="8"/>
+  <text x="360" y="112" text-anchor="middle" fill="#fff1d0" stroke="#520808" stroke-width="3" paint-order="stroke" font-family="Courier New,monospace" font-size="86" font-weight="900" letter-spacing="-7">GRANA<tspan fill="#ff3b30">XP</tspan></text>
+  <rect x="220" y="136" width="280" height="6" fill="#e53935"/>
+  <rect x="220" y="148" width="180" height="4" fill="#8b1111"/>
+</svg>

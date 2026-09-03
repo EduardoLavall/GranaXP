@@ -1,0 +1,31 @@
+@keyframes led-blink { 50% { opacity: .3; } }
+@keyframes save-pop { 0% { opacity: 0; transform: translateY(12px); } 12%,78% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-8px); } }
+@keyframes toast-in { 0% { opacity: 0; transform: translateX(40px); } 10%,78% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; transform: translateX(30px); } }
+@keyframes coin-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes cursor-blink { 50% { opacity: 0; } }
+@keyframes pulse-red { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.35); } }
+@keyframes xp-float { 0% { opacity: 0; transform: translate(-50%, 12px) scale(.8); } 20%,70% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, -46px) scale(1); } }
+@keyframes pixel-shake { 0%,100% { transform: translate(0); } 20% { transform: translate(-6px,2px); } 40% { transform: translate(6px,-2px); } 60% { transform: translate(-3px,-1px); } 80% { transform: translate(3px,1px); } }
+@keyframes reward-stamp { 0% { opacity: 0; transform: scale(1.7) rotate(-6deg); } 65% { opacity: 1; transform: scale(.94) rotate(2deg); } 100% { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes flash-screen { 0%,100% { opacity: 0; } 35% { opacity: .85; } }
+@keyframes particle-burst { to { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity: 0; } }
+@keyframes boot-flicker { 0%,18%,22%,100% { opacity: 1; } 20% { opacity: .55; } }
+@keyframes bar-scan { from { transform: translateX(-100%); } to { transform: translateX(500%); } }
+@keyframes slide-glitch { 0%,100% { transform: translate(0); filter: none; } 25% { transform: translate(6px,-2px); filter: hue-rotate(8deg); } 50% { transform: translate(-4px,3px); } 75% { transform: translate(2px,-1px); } }
+
+.xp-float {
+  position: fixed;
+  z-index: 500;
+  left: 50%;
+  top: 38%;
+  color: var(--gold);
+  font: 18px/1 var(--display);
+  text-shadow: 4px 4px 0 #000;
+  animation: xp-float 1.3s steps(6,end) forwards;
+  pointer-events: none;
+}
+
+.screen-flash { position: fixed; z-index: 450; inset: 0; background: var(--cream); pointer-events: none; animation: flash-screen .48s steps(3,end) forwards; }
+.pixel-particle { position: fixed; z-index: 480; width: var(--size); height: var(--size); left: var(--x); top: var(--y); background: var(--color); box-shadow: 2px 2px 0 #000; animation: particle-burst .75s steps(6,end) forwards; pointer-events: none; }
+.shake { animation: pixel-shake .42s steps(5,end); }
+.reward-stamp { animation: reward-stamp .42s steps(5,end) both; }

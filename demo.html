@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Demo jogável do GranaXP — transforme bons hábitos financeiros em progresso.">
+  <title>GranaXP — Demo Jogável</title>
+  <link rel="icon" href="assets/svg/granaxp-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/pixel-ui.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/demo.css">
+  <script defer src="js/icons.js"></script>
+  <script defer src="js/audio.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/demo.js"></script>
+</head>
+<body class="demo-app scanlines dither-bg">
+  <a class="sr-only" href="#main-content">Ir para o conteúdo principal</a>
+
+  <section class="boot-screen" id="boot-screen" aria-labelledby="boot-title">
+    <div class="boot-logo-wrap">
+      <span class="version-label">VERSÃO DEMO 0.1</span>
+      <h1 class="boot-logo" id="boot-title">GRANA<span>XP</span></h1>
+      <p>Transforme suas finanças em um jogo.</p>
+    </div>
+    <div class="save-card pixel-panel">
+      <header><span data-icon="chest"></span><div><small>ARQUIVO SALVO</small><strong>JOGADOR 01</strong></div></header>
+      <dl>
+        <div><dt>JOGADOR</dt><dd>ALEX</dd></div>
+        <div><dt>NÍVEL</dt><dd id="boot-level">04</dd></div>
+        <div><dt>MOEDAS</dt><dd id="boot-coins">128</dd></div>
+        <div><dt>SEQUÊNCIA</dt><dd id="boot-streak">6 DIAS</dd></div>
+      </dl>
+      <button class="pixel-button boot-continue" type="button" id="continue-game"><span data-icon="play"></span> CONTINUAR</button>
+      <button class="boot-new" type="button" id="new-game">NOVO JOGO</button>
+    </div>
+    <div class="boot-footer"><span class="status-led status-led--blink"></span> SISTEMA PRONTO <i></i> ENTER PARA CONTINUAR</div>
+  </section>
+
+  <div class="game-shell" id="game-shell" hidden>
+    <header class="top-hud">
+      <button class="mobile-menu icon-button" id="mobile-menu" type="button" aria-label="Abrir menu">☰</button>
+      <a class="hud-logo" href="slides.html" aria-label="Voltar aos slides">GRANA<span>XP</span></a>
+      <div class="player-summary"><span data-icon="user"></span><small>JOGADOR</small><strong id="hud-player">ALEX</strong></div>
+      <div class="level-summary"><small>NÍVEL</small><strong id="hud-level">04</strong></div>
+      <div class="xp-summary"><div><small>XP</small><strong id="hud-xp">975 / 1000</strong></div><div class="pixel-progress pixel-progress--gold" id="hud-xp-bar" style="--value:91%"><span></span></div></div>
+      <div class="coin-summary"><span data-icon="coin"></span><small>MOEDAS</small><strong id="hud-coins">128</strong></div>
+      <div class="streak-summary"><span data-icon="flame"></span><small>SEQUÊNCIA</small><strong id="hud-streak">6 DIAS</strong></div>
+      <button class="icon-button" id="demo-audio" type="button" aria-label="Ativar ou silenciar sons"><span data-icon="sound"></span></button>
+    </header>
+
+    <aside class="game-nav" id="game-nav" aria-label="Menu principal">
+      <div class="nav-player"><span class="status-led status-led--blink"></span><span>ARQUIVO SALVO</span><b>GRANAXP_01</b></div>
+      <nav>
+        <button class="nav-item is-active" type="button" data-page="painel"><span data-icon="dashboard"></span><b>PAINEL</b></button>
+        <button class="nav-item" type="button" data-page="gastos"><span data-icon="expenses"></span><b>GASTOS</b></button>
+        <button class="nav-item" type="button" data-page="missoes"><span data-icon="quest"></span><b>MISSÕES</b><i id="nav-quest-count">2</i></button>
+        <button class="nav-item" type="button" data-page="melhorias"><span data-icon="upgrade"></span><b>MELHORIAS</b></button>
+        <button class="nav-item" type="button" data-page="conquistas"><span data-icon="achievements"></span><b>CONQUISTAS</b></button>
+        <button class="nav-item" type="button" data-page="perfil"><span data-icon="profile"></span><b>PERFIL</b></button>
+        <button class="nav-item" type="button" data-page="configuracoes"><span data-icon="settings"></span><b>CONFIGURAÇÕES</b></button>
+      </nav>
+      <div class="nav-ethics"><span data-icon="shield"></span><p>XP mede consistência.<br><strong>Nunca riqueza.</strong></p></div>
+    </aside>
+
+    <main class="game-content" id="main-content" tabindex="-1">
+      <div class="page-head">
+        <div><span class="pixel-kicker" id="page-kicker">VISÃO GERAL</span><h1 class="pixel-title" id="page-title">PAINEL DO JOGADOR</h1></div>
+        <div class="page-actions"><span class="date-chip" id="today-label"></span><button class="pixel-button" type="button" id="open-expense"><span aria-hidden="true">＋</span> REGISTRAR GASTO</button></div>
+      </div>
+      <section id="page-content" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <dialog class="pixel-dialog" id="expense-dialog">
+    <form method="dialog" id="expense-form">
+      <div class="pixel-dialog__head"><h2>REGISTRAR GASTO</h2><button class="icon-button" type="button" data-close-dialog aria-label="Fechar">×</button></div>
+      <div class="pixel-dialog__body expense-form-grid">
+        <div class="pixel-field"><label for="expense-value">VALOR (R$)</label><input class="pixel-input" id="expense-value" name="value" type="number" min="0.01" step="0.01" placeholder="35,00" required></div>
+        <div class="pixel-field"><label for="expense-category">CATEGORIA</label><select class="pixel-input" id="expense-category" name="category" required><option value="alimentacao">Alimentação</option><option value="transporte">Transporte</option><option value="lazer">Lazer</option><option value="contas">Contas</option><option value="saude">Saúde</option><option value="educacao">Educação</option><option value="outros">Outros</option></select></div>
+        <div class="pixel-field expense-wide"><label for="expense-description">DESCRIÇÃO</label><input class="pixel-input" id="expense-description" name="description" maxlength="42" placeholder="Ex.: Pizza" required></div>
+        <div class="pixel-field expense-wide"><label for="expense-date">DATA</label><input class="pixel-input" id="expense-date" name="date" type="date" required></div>
+        <p class="form-rule expense-wide"><span data-icon="shield"></span> O XP é igual para qualquer valor. O GranaXP recompensa o hábito de registrar, não o ato de gastar.</p>
+      </div>
+      <div class="pixel-dialog__actions"><button class="pixel-button pixel-button--ghost" type="button" data-close-dialog>CANCELAR</button><button class="pixel-button" type="submit"><span data-icon="check"></span> CONFIRMAR GASTO</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="pixel-dialog reward-dialog" id="reward-dialog">
+    <div class="reward-dialog-content"><span class="reward-icon" id="reward-icon" data-icon="trophy"></span><small id="reward-kicker">MISSÃO CONCLUÍDA!</small><h2 id="reward-title">REGISTRAR 3 GASTOS</h2><p id="reward-text">+20 XP · +5 MOEDAS</p><button class="pixel-button pixel-button--gold" type="button" id="reward-continue">CONTINUAR</button></div>
+  </dialog>
+
+  <dialog class="pixel-dialog" id="reset-dialog">
+    <div class="pixel-dialog__head"><h2>REINICIAR DEMO?</h2><button class="icon-button" type="button" data-close-dialog aria-label="Fechar">×</button></div>
+    <div class="pixel-dialog__body"><p>O arquivo salvo será apagado e a demo voltará ao momento ideal da apresentação.</p><p class="danger-copy">Esta ação não pode ser desfeita.</p></div>
+    <div class="pixel-dialog__actions"><button class="pixel-button pixel-button--ghost" type="button" data-close-dialog>CANCELAR</button><button class="pixel-button" type="button" id="confirm-reset">REINICIAR</button></div>
+  </dialog>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+  <div class="save-indicator" id="save-indicator"><span data-icon="chest"></span> SALVANDO...</div>
+</body>
+</html>

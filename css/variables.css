@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../assets/fonts/PressStart2P-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --bg: #090909;
+  --surface-dark: #111111;
+  --surface: #181818;
+  --surface-light: #222222;
+  --red: #e53935;
+  --red-bright: #ff3b30;
+  --red-dark: #8b1111;
+  --red-deep: #520808;
+  --cream: #fff1d0;
+  --white: #fff8ea;
+  --muted: #a99f90;
+  --gold: #ffc857;
+  --coin: #f7b928;
+  --success: #57d163;
+  --warning: #ffb020;
+  --blue: #4da3ff;
+  --danger: #ff3b30;
+  --px-1: 4px;
+  --px-2: 8px;
+  --px-3: 12px;
+  --px-4: 16px;
+  --px-5: 20px;
+  --px-6: 24px;
+  --px-8: 32px;
+  --px-10: 40px;
+  --display: "Press Start 2P", "Courier New", monospace;
+  --body: "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --shadow-red: 6px 6px 0 var(--red-deep);
+  --shadow-dark: 6px 6px 0 #000;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  color: var(--cream);
+  background: var(--bg);
+  font-family: var(--body);
+  -webkit-font-smoothing: none;
+  text-rendering: geometricPrecision;
+}
+
+button,
+input,
+select { font: inherit; }
+
+button { color: inherit; }
+
+::selection { color: var(--bg); background: var(--gold); }
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}

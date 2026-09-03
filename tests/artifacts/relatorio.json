@@ -1,0 +1,221 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "titulo": "GRANAXP",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 2,
+      "titulo": "O CHEFÃO",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 3,
+      "titulo": "PERFIL DO JOGADOR",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 4,
+      "titulo": "A IDEIA CENTRAL",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 5,
+      "titulo": "CICLO PRINCIPAL",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 6,
+      "titulo": "SISTEMAS PRINCIPAIS",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 7,
+      "titulo": "ECONOMIA DE RECOMPENSAS",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 8,
+      "titulo": "VERSÃO MVP 0.1",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 9,
+      "titulo": "O EXPERIMENTO",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 10,
+      "titulo": "COMO SABEREMOS?",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 11,
+      "titulo": "MODELO DE NEGÓCIO",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 12,
+      "titulo": "ROTEIRO DO PRODUTO",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 13,
+      "titulo": "GRANAXP",
+      "largura": 1365,
+      "altura": 768,
+      "excessoX": 0,
+      "excessoY": 0
+    }
+  ],
+  "desktop1920": [
+    {
+      "numero": 1,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 2,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 3,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 4,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 5,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 6,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 7,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 8,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 9,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 10,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 11,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 12,
+      "excessoX": 0,
+      "excessoY": 0
+    },
+    {
+      "numero": 13,
+      "excessoX": 0,
+      "excessoY": 0
+    }
+  ],
+  "mobile390": {
+    "largura": 390,
+    "excessoHorizontal": 0,
+    "menuMovel": "grid",
+    "painelVisivel": true
+  },
+  "overviewCount": 13,
+  "libraries": {
+    "captura": true,
+    "pdf": true,
+    "powerpoint": true
+  },
+  "scriptedState": {
+    "nivel": 5,
+    "xp": 1000,
+    "moedas": 153,
+    "gasto": 1630,
+    "missao": true
+  },
+  "purchaseState": {
+    "moedas": 123,
+    "scanner": true
+  },
+  "deletionState": {
+    "xp": 1000,
+    "missao": true,
+    "gasto": 1595
+  },
+  "persistenceState": {
+    "scanner": true,
+    "xp": 1000,
+    "missao": true
+  },
+  "resetState": {
+    "nivel": 4,
+    "xp": 975,
+    "moedas": 128,
+    "gasto": 1595,
+    "missao": 2
+  },
+  "downloads": [
+    "GranaXP-MVP.pdf",
+    "GranaXP-MVP.pptx"
+  ],
+  "consoleErrors": [],
+  "failedResponses": []
+}

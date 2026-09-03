@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Apresentação interativa do MVP GranaXP — controle financeiro com progressão de jogo.">
+  <title>GranaXP — Apresentação do MVP</title>
+  <link rel="icon" href="assets/svg/granaxp-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/pixel-ui.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/slides.css">
+  <script defer src="vendor/html2canvas.min.js"></script>
+  <script defer src="vendor/jspdf.umd.min.js"></script>
+  <script defer src="vendor/pptxgen.bundle.js"></script>
+  <script defer src="js/icons.js"></script>
+  <script defer src="js/audio.js"></script>
+  <script defer src="js/pixel-transition.js"></script>
+  <script defer src="js/export.js"></script>
+  <script defer src="js/slides.js"></script>
+</head>
+<body class="slides-app scanlines dither-bg">
+  <a class="sr-only skip-link" href="#slide-1">Ir para a apresentação</a>
+
+  <main class="presentation-stage" aria-label="Apresentação GranaXP" aria-live="polite">
+    <div class="deck" id="deck">
+      <section class="slide slide--title is-active" id="slide-1" data-slide="1" data-transition="pixel" aria-labelledby="s1-title">
+        <div class="title-coins" aria-hidden="true">
+          <span data-icon="coin"></span><span data-icon="coin"></span><span data-icon="coin"></span>
+        </div>
+        <div class="title-frame">
+          <div class="pixel-kicker">Versão MVP 0.1</div>
+          <h1 class="logo-xl" id="s1-title">GRANA<span>XP</span></h1>
+          <p class="title-tagline">Transforme suas finanças em um jogo.</p>
+          <div class="title-rule"></div>
+          <p class="title-features">CONTROLE DE GASTOS <b>•</b> MISSÕES <b>•</b> XP <b>•</b> PROGRESSÃO</p>
+          <button class="press-start" type="button" data-next-slide><span>▶</span> PRESSIONE PARA COMEÇAR</button>
+          <div class="player-ready"><span class="status-led status-led--blink"></span> JOGADOR 1 PRONTO</div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-2" data-slide="2" data-transition="checker" aria-labelledby="s2-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Batalha 01</span><h2 class="pixel-title" id="s2-title">O CHEFÃO</h2></div>
+          <p>O verdadeiro inimigo do controle financeiro.</p>
+        </header>
+        <div class="boss-layout">
+          <div class="boss-card pixel-panel">
+            <span class="boss-skull" data-icon="skull"></span>
+            <blockquote>“Depois eu vejo isso.”</blockquote>
+            <div class="boss-name">PROCRASTINAÇÃO <span>NV. 99</span></div>
+            <div class="boss-hp"><b>PV</b><div class="pixel-progress pixel-progress--danger" style="--value:100%"><span></span></div><strong>100%</strong></div>
+          </div>
+          <div class="minion-grid">
+            <article><span data-icon="scroll"></span><strong>REGISTRO CHATO</strong></article>
+            <article><span data-icon="flame"></span><strong>FALTA DE HÁBITO</strong></article>
+            <article><span data-icon="chest"></span><strong>ZERO RECOMPENSA</strong></article>
+          </div>
+          <p class="slide-note">Muitas pessoas começam a controlar seus gastos, mas abandonam o hábito poucos dias depois.</p>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-3" data-slide="3" data-transition="curtain" aria-labelledby="s3-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Quem joga?</span><h2 class="pixel-title" id="s3-title">PERFIL DO JOGADOR</h2></div>
+          <p>Para quem estamos criando?</p>
+        </header>
+        <div class="profile-slide pixel-panel">
+          <div class="profile-avatar"><span data-icon="user"></span><b>JOGADOR 01</b></div>
+          <div class="profile-stats">
+            <dl>
+              <div><dt>JOGADOR</dt><dd>Jovem adulto</dd></div>
+              <div><dt>IDADE</dt><dd>18–35 anos</dd></div>
+              <div><dt>CLASSE</dt><dd>Universitário ou jovem profissional</dd></div>
+              <div class="quest-row"><dt>MISSÃO ATUAL</dt><dd><span data-icon="target"></span> Organizar a vida financeira</dd></div>
+            </dl>
+          </div>
+          <div class="debuffs">
+            <h3>EFEITOS NEGATIVOS</h3>
+            <ul>
+              <li>Esquece de registrar gastos</li>
+              <li>Acha planilha tediosa</li>
+              <li>Abandona aplicativos financeiros</li>
+              <li>A recompensa financeira demora a aparecer</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-4" data-slide="4" data-transition="glitch" aria-labelledby="s4-title">
+        <header class="slide-header slide-header--compact">
+          <div><span class="pixel-kicker">A virada</span><h2 class="pixel-title" id="s4-title">A IDEIA CENTRAL</h2></div>
+        </header>
+        <p class="idea-statement">TRANSFORMAR BONS HÁBITOS FINANCEIROS<br><em>EM PROGRESSÃO DE JOGO.</em></p>
+        <div class="action-loop" aria-label="Ciclo da ação financeira à motivação">
+          <article><span data-icon="wallet"></span><b>AÇÃO REAL</b></article><i>›</i>
+          <article><span data-icon="lightning"></span><b>RESPOSTA DO JOGO</b></article><i>›</i>
+          <article><span data-icon="coin"></span><b>RECOMPENSA</b></article><i>›</i>
+          <article><span data-icon="level"></span><b>PROGRESSO</b></article><i>›</i>
+          <article><span data-icon="flame"></span><b>MOTIVAÇÃO</b></article>
+        </div>
+        <div class="loop-return"><span>↖</span> O progresso incentiva a próxima ação saudável <span>↗</span></div>
+      </section>
+
+      <section class="slide" id="slide-5" data-slide="5" data-transition="pixel" aria-labelledby="s5-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">O ritmo da experiência</span><h2 class="pixel-title" id="s5-title">CICLO PRINCIPAL</h2></div>
+          <p>Curto, recompensador e repetível.</p>
+        </header>
+        <div class="gameplay-path">
+          <article><b>01</b><span data-icon="wallet"></span><strong>REGISTRAR<br>GASTO</strong></article>
+          <i>›</i><article><b>02</b><span data-icon="graph"></span><strong>VER<br>ORÇAMENTO</strong></article>
+          <i>›</i><article><b>03</b><span data-icon="check"></span><strong>CONCLUIR<br>MISSÃO</strong></article>
+          <i>›</i><article class="gold"><b>04</b><span data-icon="coin"></span><strong>GANHAR<br>XP + MOEDAS</strong></article>
+          <i>›</i><article><b>05</b><span data-icon="level"></span><strong>SUBIR DE<br>NÍVEL</strong></article>
+          <i>›</i><article><b>06</b><span data-icon="upgrade"></span><strong>LIBERAR<br>MELHORIA</strong></article>
+          <i>›</i><article><b>07</b><span data-icon="calendar"></span><strong>VOLTAR<br>AMANHÃ</strong></article>
+        </div>
+        <div class="session-callout"><strong>30–60 SEGUNDOS</strong><span>POR SESSÃO</span></div>
+        <div class="healthy-row"><span class="pixel-badge pixel-badge--red">SEQUÊNCIA</span><span class="pixel-badge">MISSÕES DIÁRIAS</span><span class="pixel-badge">MISSÕES SEMANAIS</span><p>Formação saudável de hábito, sem mecânicas manipulativas.</p></div>
+      </section>
+
+      <section class="slide" id="slide-6" data-slide="6" data-transition="checker" aria-labelledby="s6-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Menu do jogo</span><h2 class="pixel-title" id="s6-title">SISTEMAS PRINCIPAIS</h2></div>
+          <p>Cada sistema reforça consistência e consciência.</p>
+        </header>
+        <div class="systems-grid">
+          <article><span data-icon="scroll"></span><div><h3>REGISTRO DE MISSÕES</h3><p>Diárias: registrar, conferir e categorizar. Semanais: respeitar o orçamento e economizar.</p></div></article>
+          <article><span data-icon="lightning"></span><div><h3>XP</h3><p>Boas ações financeiras geram experiência.</p></div></article>
+          <article><span data-icon="level"></span><div><h3>NÍVEL</h3><p>Mede consistência — nunca riqueza.</p></div></article>
+          <article><span data-icon="coin"></span><div><h3>MOEDAS</h3><p>Moeda virtual recebida por missões concluídas.</p></div></article>
+          <article><span data-icon="upgrade"></span><div><h3>MELHORIAS</h3><p>Desbloqueiam progressão e itens cosméticos.</p></div></article>
+          <article><span data-icon="trophy"></span><div><h3>CONQUISTAS E SEQUÊNCIA</h3><p>Marcos duradouros e presença consistente.</p></div></article>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-7" data-slide="7" data-transition="curtain" aria-labelledby="s7-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Economia ética</span><h2 class="pixel-title" id="s7-title">ECONOMIA DE RECOMPENSAS</h2></div>
+          <p>A ação vale mais que o valor gasto.</p>
+        </header>
+        <div class="economy-layout">
+          <div class="reward-list">
+            <article><span data-icon="wallet"></span><b>REGISTRAR GASTO</b><strong>+5 XP</strong></article>
+            <article><span data-icon="check"></span><b>CONCLUIR MISSÃO DIÁRIA</b><strong>+20 XP · +5 MOEDAS</strong></article>
+            <article><span data-icon="shield"></span><b>SEMANA NO ORÇAMENTO</b><strong>+100 XP · +25 MOEDAS</strong></article>
+            <article><span data-icon="target"></span><b>ATINGIR META DE ECONOMIA</b><strong>+150 XP · +40 MOEDAS</strong></article>
+          </div>
+          <div class="level-up-card pixel-panel"><span data-icon="level"></span><small>SUBIU DE NÍVEL!</small><div><b>NV. 04</b><i>→</i><strong>NV. 05</strong></div><p>RECOMPENSA: +20 MOEDAS</p></div>
+        </div>
+        <div class="ethics-rule"><span data-icon="shield"></span><strong>O JOGO RECOMPENSA COMPORTAMENTO,<br>NÃO QUANTO DINHEIRO VOCÊ POSSUI.</strong></div>
+      </section>
+
+      <section class="slide" id="slide-8" data-slide="8" data-transition="glitch" aria-labelledby="s8-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Escopo mínimo viável</span><h2 class="pixel-title" id="s8-title">VERSÃO MVP 0.1</h2></div>
+          <p>Construir pequeno. Testar rápido. Evoluir depois.</p>
+        </header>
+        <div class="scope-split">
+          <article class="in-scope"><h3><span data-icon="check"></span> ENTRA NO MVP</h3><ul><li>Cadastro simples</li><li>Renda mensal e orçamento</li><li>Registro de gastos</li><li>Categorias e saldo disponível</li><li>XP, níveis e moedas</li><li>Missões diárias</li><li>Conquistas básicas</li></ul></article>
+          <article class="locked-scope"><h3><span data-icon="lock"></span> BLOQUEADO PARA DEPOIS</h3><ul><li>Sistema Financeiro Aberto</li><li>Integração bancária</li><li>Inteligência artificial financeira</li><li>Investimentos</li><li>Multijogador e área social</li><li>Mercado de itens</li><li>Automação bancária</li></ul></article>
+        </div>
+        <p class="build-mantra">CONSTRUIR PEQUENO <b>•</b> TESTAR RÁPIDO <b>•</b> EVOLUIR DEPOIS</p>
+      </section>
+
+      <section class="slide" id="slide-9" data-slide="9" data-transition="pixel" aria-labelledby="s9-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Teste com usuários</span><h2 class="pixel-title" id="s9-title">O EXPERIMENTO</h2></div>
+          <p>O jogo realmente melhora a constância?</p>
+        </header>
+        <div class="versus-layout">
+          <article class="fighter fighter--red"><small>GRUPO A</small><span data-icon="sword"></span><h3>GRANAXP</h3><p>COM GAMIFICAÇÃO</p></article>
+          <div class="versus"><b>X</b><span>20 USUÁRIOS</span><span>30 DIAS</span></div>
+          <article class="fighter"><small>GRUPO B</small><span data-icon="wallet"></span><h3>CONTROLE FINANCEIRO</h3><p>SEM GAMIFICAÇÃO</p></article>
+        </div>
+        <div class="metrics-row" aria-label="Métricas avaliadas">
+          <span>SESSÕES/SEMANA</span><span>GASTOS REGISTRADOS</span><span>RETENÇÃO 7 · 14 · 30 DIAS</span><span>MISSÕES CONCLUÍDAS</span><span>SATISFAÇÃO</span>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-10" data-slide="10" data-transition="checker" aria-labelledby="s10-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Condição de vitória</span><h2 class="pixel-title" id="s10-title">COMO SABEREMOS?</h2></div>
+        </header>
+        <div class="win-layout">
+          <div class="primary-quest pixel-panel"><span data-icon="target"></span><small>MISSÃO PRINCIPAL</small><h3>A gamificação aumenta a frequência e a retenção no controle financeiro?</h3></div>
+          <div class="success-list"><h3>OBJETIVOS DE SUCESSO</h3><p><span>□</span> 60% ou mais ativos após 30 dias</p><p><span>□</span> Grupo gamificado usa o aplicativo com mais frequência</p><p><span>□</span> 70% ou mais considera a gamificação motivadora</p></div>
+          <div class="validated-reward"><span data-icon="trophy"></span><small>RECOMPENSA</small><b>IDEIA VALIDADA</b><strong>+1000 XP</strong></div>
+        </div>
+        <div class="retry-line"><span>SE NÃO FUNCIONAR:</span><b>APRENDER → AJUSTAR → TESTAR DE NOVO</b><span data-icon="retry"></span></div>
+      </section>
+
+      <section class="slide" id="slide-11" data-slide="11" data-transition="curtain" aria-labelledby="s11-title">
+        <header class="slide-header slide-header--compact">
+          <div><span class="pixel-kicker">Mapa do negócio</span><h2 class="pixel-title" id="s11-title">MODELO DE NEGÓCIO</h2></div>
+          <p>O modelo como um mapa de mundo.</p>
+        </header>
+        <div class="canvas-map">
+          <article><span data-icon="user"></span><h3>CLIENTES</h3><p>Jovens adultos de 18 a 35 anos</p></article>
+          <article class="canvas-key"><span data-icon="star"></span><h3>VALOR</h3><p>Controle financeiro que recompensa o progresso</p></article>
+          <article><span data-icon="arrow"></span><h3>CANAIS</h3><p>Navegador, celular e redes sociais</p></article>
+          <article><span data-icon="heart"></span><h3>RELACIONAMENTO</h3><p>Missões, conquistas e evolução</p></article>
+          <article><span data-icon="coin"></span><h3>RECEITA</h3><p>Gratuito com plano pago</p></article>
+          <article><span data-icon="chest"></span><h3>RECURSOS</h3><p>Aplicativo, sistema de jogo e experiência</p></article>
+          <article><span data-icon="upgrade"></span><h3>ATIVIDADES</h3><p>Desenvolver, testar e equilibrar</p></article>
+          <article><span data-icon="shield"></span><h3>PARCEIROS</h3><p>Futuros bancos, fintechs e ecossistema aberto</p></article>
+          <article><span data-icon="wallet"></span><h3>CUSTOS</h3><p>Desenvolvimento, hospedagem e manutenção</p></article>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-12" data-slide="12" data-transition="glitch" aria-labelledby="s12-title">
+        <header class="slide-header">
+          <div><span class="pixel-kicker">Jornada de evolução</span><h2 class="pixel-title" id="s12-title">ROTEIRO DO PRODUTO</h2></div>
+          <p>Cada mundo valida o próximo.</p>
+        </header>
+        <div class="world-map">
+          <article class="world is-current"><small>MUNDO 1</small><span data-icon="chest"></span><b>MVP</b><em>VOCÊ ESTÁ AQUI</em></article>
+          <i>····›</i><article class="world"><small>MUNDO 2</small><span data-icon="user"></span><b>TESTE COM USUÁRIOS</b></article>
+          <i>····›</i><article class="world"><small>MUNDO 3</small><span data-icon="wallet"></span><b>FINANÇAS ABERTAS</b></article>
+          <i>····›</i><article class="world"><small>MUNDO 4</small><span data-icon="scroll"></span><b>MISSÕES INTELIGENTES</b></article>
+          <i>····›</i><article class="world"><small>MUNDO 5</small><span data-icon="heart"></span><b>DESAFIOS SOCIAIS</b></article>
+        </div>
+        <div class="roadmap-boss"><span data-icon="skull"></span><div><small>CHEFÃO FINAL</small><strong>ADEQUAÇÃO ENTRE PRODUTO E MERCADO</strong></div><div class="pixel-progress pixel-progress--danger" style="--value:8%"><span></span></div></div>
+      </section>
+
+      <section class="slide slide--final" id="slide-13" data-slide="13" data-transition="pixel" aria-labelledby="s13-title">
+        <div class="final-content">
+          <span class="pixel-kicker">A jornada começa agora</span>
+          <h2 class="logo-xl" id="s13-title">GRANA<span>XP</span></h2>
+          <p>GranaXP transforma o controle financeiro em uma jornada de progresso.</p>
+          <p>Não queremos apenas mostrar onde o usuário gastou dinheiro.<br><strong>Queremos ajudá-lo a criar o hábito de cuidar dele.</strong></p>
+          <a class="pixel-button demo-launch" href="demo.html"><span data-icon="play"></span> INICIAR DEMO</a>
+          <div class="quest-complete"><span data-icon="trophy"></span><div><small>MISSÃO CONCLUÍDA</small><b>APRESENTAÇÃO DO MVP</b><strong>+500 XP</strong></div></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <aside class="quest-hud no-export" aria-label="Progresso da apresentação">
+    <span>MISSÃO: APRESENTAR O GRANAXP</span>
+    <div class="hud-progress" aria-hidden="true"><i id="hud-progress-fill"></i></div>
+    <b id="hud-progress-text">1 / 13</b>
+  </aside>
+
+  <nav class="slide-controls no-export" aria-label="Controles da apresentação">
+    <button class="icon-button" type="button" id="prev-slide" aria-label="Slide anterior"><span aria-hidden="true">◀</span></button>
+    <span id="slide-counter" aria-live="polite">01 / 13</span>
+    <button class="icon-button" type="button" id="next-slide" aria-label="Próximo slide"><span aria-hidden="true">▶</span></button>
+    <span class="controls-separator"></span>
+    <button class="icon-button" type="button" id="overview-toggle" aria-label="Visão geral dos slides"><span data-icon="graph"></span></button>
+    <button class="icon-button" type="button" id="audio-toggle" aria-label="Ativar ou silenciar sons"><span data-icon="sound"></span></button>
+    <button class="icon-button" type="button" id="fullscreen-toggle" aria-label="Ativar tela cheia"><span aria-hidden="true">⛶</span></button>
+    <button class="icon-button" type="button" id="export-toggle" aria-label="Abrir opções de exportação"><span data-icon="export"></span></button>
+    <button class="icon-button" type="button" id="help-toggle" aria-label="Abrir ajuda"><span aria-hidden="true">?</span></button>
+  </nav>
+
+  <div class="overview no-export" id="overview" hidden aria-label="Visão geral dos slides">
+    <div class="overview-head"><h2>SELECIONAR FASE</h2><button class="pixel-button pixel-button--small" type="button" data-close-overview>VOLTAR</button></div>
+    <div class="overview-grid" id="overview-grid"></div>
+  </div>
+
+  <div class="export-menu no-export" id="export-menu" hidden>
+    <strong>EXPORTAR APRESENTAÇÃO</strong>
+    <button type="button" data-export="pdf"><span data-icon="export"></span> EXPORTAR PDF</button>
+    <button type="button" data-export="pptx"><span data-icon="export"></span> EXPORTAR POWERPOINT</button>
+    <button type="button" data-export="print"><span aria-hidden="true">▣</span> IMPRIMIR</button>
+  </div>
+
+  <dialog class="pixel-dialog no-export" id="help-dialog">
+    <div class="pixel-dialog__head"><h2>CONTROLES</h2><button class="icon-button" type="button" data-close-dialog aria-label="Fechar ajuda">×</button></div>
+    <div class="pixel-dialog__body help-grid">
+      <kbd>→ / ↓ / ESPAÇO</kbd><span>Próximo slide</span><kbd>← / ↑</kbd><span>Slide anterior</span>
+      <kbd>F</kbd><span>Tela cheia</span><kbd>M</kbd><span>Ativar ou silenciar sons</span>
+      <kbd>D</kbd><span>Abrir a demo</span><kbd>ESC</kbd><span>Visão geral</span>
+      <kbd>E</kbd><span>Exportar</span><kbd>H / ?</kbd><span>Mostrar esta ajuda</span>
+    </div>
+  </dialog>
+
+  <div class="export-overlay no-export" id="export-overlay" hidden role="status" aria-live="assertive">
+    <div class="pixel-panel"><span data-icon="export"></span><h2 id="export-status">PREPARANDO EXPORTAÇÃO</h2><div class="pixel-progress pixel-progress--gold" style="--value:0%"><span></span></div><p id="export-count">0 / 13</p></div>
+  </div>
+
+  <div class="transition-layer no-export" id="transition-layer" aria-hidden="true"></div>
+</body>
+</html>
