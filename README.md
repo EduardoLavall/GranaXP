@@ -1,48 +1,75 @@
 # GranaXP
 
-Apresentação interativa e demo jogável de um MVP de controle financeiro gamificado. Toda a experiência está em português do Brasil, funciona sem backend e usa apenas HTML, CSS, JavaScript, SVG e APIs do navegador.
+GranaXP é um MVP de gestão financeira pessoal gamificada com apresentação interativa e demo jogável em estilo pixel-art.
 
-## Como executar
+O repositório agora está organizado como **frontend + backend serverless para Vercel**:
 
-Opção 1: abra `slides.html` diretamente no navegador.
+- frontend: HTML + CSS + JavaScript puro;
+- backend: Vercel Functions em `/api`;
+- persistência MVP: Google Sheets API;
+- fallback offline/local: `localStorage`;
+- especificações para colaboração humano + IA em `docs/specs/`.
 
-Opção 2: na pasta do projeto, inicie um servidor estático:
+## Entradas principais
+- `slides.html` — apresentação interativa com 13 slides;
+- `demo.html` — aplicação/demo jogável;
+- `/api/health` — diagnóstico do backend;
+- `/api/state` — leitura/gravação do estado persistido.
 
-```bash
-python -m http.server 8080
-```
+## Como a persistência funciona
+Quando hospedado no Vercel, a demo tenta carregar o estado do Google Sheets antes de iniciar. Mudanças continuam salvas localmente e são sincronizadas para o backend em segundo plano.
 
-Depois, acesse `http://localhost:8080/slides.html`.
+Se o backend estiver indisponível — ou se os arquivos forem abertos diretamente via `file://` — o aplicativo continua usando `localStorage`.
+
+As despesas também são sincronizadas para uma aba `Transactions` da planilha para facilitar inspeção e evolução futura.
+
+## Configuração
+Veja **[`docs/SETUP.md`](docs/SETUP.md)** para o passo a passo completo de:
+- Google Cloud / Google Sheets API;
+- service account;
+- compartilhamento da planilha;
+- variáveis de ambiente no Vercel;
+- deploy e diagnóstico.
+
+Template de variáveis: `.env.example`.
+
+## Spec-driven development
+Antes de mudanças relevantes, IAs e colaboradores devem ler **[`AGENTS.md`](AGENTS.md)** e as specs:
+
+- [`docs/specs/PRODUCT.md`](docs/specs/PRODUCT.md)
+- [`docs/specs/ARCHITECTURE.md`](docs/specs/ARCHITECTURE.md)
+- [`docs/specs/API.md`](docs/specs/API.md)
+- [`docs/specs/DATA_MODEL.md`](docs/specs/DATA_MODEL.md)
+- [`docs/specs/MOBILE_ROADMAP.md`](docs/specs/MOBILE_ROADMAP.md)
+- [`docs/specs/STATEMENT_IMPORT.md`](docs/specs/STATEMENT_IMPORT.md)
+- [`docs/specs/DECISIONS.md`](docs/specs/DECISIONS.md)
+
+Mudanças de comportamento/arquitetura devem atualizar a spec correspondente no mesmo PR.
 
 ## Controles dos slides
-
 - `→`, `↓`, `Espaço` ou `PageDown`: próximo slide
-- `←`, `↑` ou `PageUp`: slide anterior
-- `Home` / `End`: primeiro / último slide
+- `←`, `↑` ou `PageUp`: anterior
+- `Home` / `End`: primeiro / último
 - `Esc`: visão geral
 - `F`: tela cheia
-- `M`: ativar ou silenciar sons
-- `D`: abrir a demo
-- `E`: menu de exportação
+- `M`: som
+- `D`: demo
+- `E`: exportação
 - `H` ou `?`: ajuda
 
 ## Exportação
+A apresentação exporta PDF e PowerPoint no navegador usando bibliotecas locais em `vendor/`.
 
-O menu de exportação gera PDF e PowerPoint no próprio navegador. As bibliotecas necessárias estão em `vendor`, portanto não é preciso acesso à internet. A opção de impressão usa uma folha 16:9 por slide e oculta os controles.
+## Demo roteirizada
+O estado inicial continua preparado para apresentação: registrar um gasto de R$ 35 conclui a missão, concede XP/moedas e leva o jogador ao nível 5. Depois é possível comprar uma melhoria.
 
-## Demo
+## Próximas frentes planejadas
+1. autenticação real antes de multiusuário;
+2. mobile-first com navegação inferior e HUD compacto;
+3. importação de extratos via CSV/OFX primeiro;
+4. PDF/OCR/IA atrás de adapters de backend;
+5. revisão obrigatória de transações importadas antes de gravá-las;
+6. migração futura do Google Sheets para banco relacional se o MVP ultrapassar os limites da planilha.
 
-Use **Continuar** para carregar o estado preparado para a apresentação. Registre um gasto de R$ 35 em Alimentação para concluir a missão diária, receber XP e moedas e subir ao nível 5. Depois, visite **Melhorias** para comprar um item.
-
-Em **Configurações**, o botão **Reiniciar demo** restaura esse momento. Também é possível abrir `demo.html?reset=1`.
-
-O estado é salvo localmente na chave `granaxp_save_v1` do `localStorage`.
-
-## Estrutura
-
-- `slides.html`: apresentação interativa com 13 slides
-- `demo.html`: MVP jogável
-- `css/`: sistema visual pixel art e layouts
-- `js/`: navegação, transições, áudio, exportação, persistência e lógica do jogo
-- `assets/`: SVGs originais
-- `vendor/`: bibliotecas locais para exportar PDF e PowerPoint
+## Segurança
+Credenciais Google ficam **somente** nas variáveis de ambiente do Vercel. O frontend nunca deve acessar diretamente a API do Google nem conter chaves privadas.
