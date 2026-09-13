@@ -72,11 +72,38 @@
     catch { return idealState(); }
   }
 
-  function save(state) {
+  function saveLocal(state, dispatch = true) {
     state.version = VERSION;
     state.updatedAt = Date.now();
     localStorage.setItem(KEY, JSON.stringify(state));
-    document.dispatchEvent(new CustomEvent("granaxp:saved"));
+    if (dispatch) document.dispatchEvent(new CustomEvent("granaxp:saved"));
+  }
+
+  function save(state) {
+    saveLocal(state, true);
+    window.GranaApi?.saveState?.(state);
+  }
+
+  async function hydrateRemote() {
+    if (!window.GranaApi?.canUseApi?.()) return load();
+    try {
+      const remote = await window.GranaApi.loadState();
+      if (remote) {
+        const normalized = normalize(remote);
+        saveLocal(normalized, false);
+        document.dispatchEvent(new CustomEvent("granaxp:hydrated", { detail: { source: "google-sheets" } }));
+        return normalized;
+      }
+
+      const local = load();
+      window.GranaApi.saveState(local);
+      document.dispatchEvent(new CustomEvent("granaxp:hydrated", { detail: { source: "local-seed" } }));
+      return local;
+    } catch (error) {
+      console.warn("Google Sheets unavailable; using localStorage.", error);
+      document.dispatchEvent(new CustomEvent("granaxp:hydrated", { detail: { source: "local-fallback", error: error.message } }));
+      return load();
+    }
   }
 
   function reset(mode = "ideal") {
@@ -85,5 +112,5 @@
     return state;
   }
 
-  window.GranaStorage = { KEY, load, save, reset, idealState, freshState, today };
+  window.GranaStorage = { KEY, load, save, reset, hydrateRemote, idealState, freshState, today };
 })();

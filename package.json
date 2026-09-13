@@ -1,0 +1,13 @@
+{
+  "name": "granaxp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "GranaXP frontend + Vercel serverless backend backed by Google Sheets.",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
